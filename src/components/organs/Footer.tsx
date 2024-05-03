@@ -6,6 +6,10 @@ import { List } from "../atoms/List"
 import { Link } from "react-router-dom"
 import { Envelope,InstagramLogo ,Phone} from "@phosphor-icons/react"
 import app from "../../assets/appdownload.png"
+import { NavLinks } from "../particles/DataLists"
+import { NavLink} from "react-router-dom";
+
+
 
 
 const Footer = () => {
@@ -25,9 +29,25 @@ const Footer = () => {
                     </Text>
                     <ul className="flex flex-col gap-2">
                         {
-                            FooterTexts.quickLinks.links.map((link, index) => (
-                                <List key={index} className="text-sm">
-                                    <Link to={link.url} className="text-color4 transition-all duration-300 hover:underline">{link.name}</Link>
+                            // FooterTexts.quickLinks.links.map((link, index) => (
+                            //     <List key={index} className="text-sm">
+                            //         <Link to={link.url} className="text-color4 transition-all duration-300 hover:underline">{link.name}</Link>
+                            //     </List>
+                            // ))
+                            NavLinks.map((navlink, index) => (
+                                <List className="w-full text-base" key={index}>
+                                    <NavLink 
+                                    to={navlink.url} 
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        const targetId = navlink.url;
+                                        const anchor = document.querySelector(targetId)
+                                        if(anchor){
+                                            anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                                        }
+                                       }}
+                                    className="relative inline-block overflow-hidden pt-2 pl-2 before:w-2 before:h-2 before:bg-color2 before:absolute before:top-2 before:-left-10 before:rounded-full before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 after:w-0.5 after:h-3 after:bg-color2 after:absolute after:left-1 after:-top-10 hover:after:top-3.5 after:transition-all after:duration-200 after:ease-in">{navlink.name}
+                                    </NavLink>
                                 </List>
                             ))
                         }
@@ -45,6 +65,7 @@ const Footer = () => {
                                     <Link to={link.url} className="text-color4 transition-all duration-300 hover:underline">{link.name}</Link>
                                 </List>
                             ))
+                           
                         }
                     </ul>
                 </div>
@@ -74,7 +95,7 @@ const Footer = () => {
                             </Link>
                         </List>
                         <List>
-                            <Link to={`/https://www.instagram.com/med_musafir?igsh=MTZvNzhlYW9tYXpwcQ==`} className="text-color3 border-[1px] border-color3/50 p-2.5 flex rounded-full transition-all duration-300 ease-in hover:bg-gradient-to-tr from-color1 to-color2 hover:text-white">
+                            <Link to={`https://www.instagram.com/med_musafir?igsh=aHdnbXl2cHMxanB6`} className="text-color3 border-[1px] border-color3/50 p-2.5 flex rounded-full transition-all duration-300 ease-in hover:bg-gradient-to-tr from-color1 to-color2 hover:text-white">
                                 <InstagramLogo size={15} color="currentColor" weight="fill" />
                             </Link>
                         </List>

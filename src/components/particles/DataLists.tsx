@@ -1,7 +1,7 @@
 export const NavLinks = [
     {
         name: "Home",
-        url: "/",
+        url: "#home",
         // id="#services",
     },
     {
@@ -51,11 +51,11 @@ export const ServiceTexts = {
     cards: [
         {
             firstText: "Calculated Weather",
-            secondText: "Trips & Trekks are planned in best possible weather arounf the country."
+            secondText: "Trips & Trekks are planned in best possible weather around the country."
         },
         {
             firstText: "Best Travel",
-            secondText: "Luxourious travel with comfortable seats and descent space for your bags."
+            secondText: "Luxurious travel with comfortable seats and descent space for your bags."
         },
         {
             firstText: "Local Events",
@@ -172,20 +172,24 @@ export const FooterTexts = {
         caption: "Quick Links",
         links: [
             {
+                name: "Home",
+                url: "#home"
+            },
+            {
                 name: "Services",
-                url: "/"
+                url: "#services"
             },
             {
                 name: "Destination",
-                url: "/"
+                url: "#destinations",
             },
             {
                 name: "Testimonials",
-                url: "/"
+                url: "#testimonials",
             },
             {
                 name: "Bookings",
-                url: "/"
+                url: "#footer"
             },
             // {
             //     name: "Login",
@@ -202,11 +206,11 @@ export const FooterTexts = {
         links: [
             {
                 name: "Swapnil 7745052603",
-                url: "/"
+                url: "tel:7745052603"
             },
             {
-                name: "Rushikesh 91727 29922",
-                url: "/"
+                name: "Rushikesh 9172729922",
+                url: "tel:9172729922"
             },
             // {
             //     name: "Policies",
