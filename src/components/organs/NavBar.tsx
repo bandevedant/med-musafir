@@ -103,9 +103,25 @@ const NavBar = () => {
                         </div>
                         <ul className="flex flex-col gap-3 pl-2">
                             {
+                                // NavLinks.map((navlink, index) => (
+                                //     <List className="w-full text-base" key={index}>
+                                //         <NavLink to={navlink.url} onClick={handleToggle} className={`relative overflow-hidden inline-block before:w-full before:h-0.5 before:bg-color2 before:absolute before:bottom-0 before:-left-full before:rounded-full before:transition-all before:duration-200 before:ease-in hover:before:left-0 `}>{navlink.name}</NavLink>
+                                //     </List>
+                                // ))
                                 NavLinks.map((navlink, index) => (
                                     <List className="w-full text-base" key={index}>
-                                        <NavLink to={navlink.url} onClick={handleToggle} className={`relative overflow-hidden inline-block before:w-full before:h-0.5 before:bg-color2 before:absolute before:bottom-0 before:-left-full before:rounded-full before:transition-all before:duration-200 before:ease-in hover:before:left-0 `}>{navlink.name}</NavLink>
+                                        <NavLink 
+                                        to={navlink.url} 
+                                        onClick={(event) => {
+                                            event.preventDefault();
+                                            const targetId = navlink.url;
+                                            const anchor = document.querySelector(targetId)
+                                            if(anchor){
+                                                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                                            }
+                                           }}
+                                        className="relative inline-block overflow-hidden pt-2 pl-2 before:w-2 before:h-2 before:bg-color2 before:absolute before:top-2 before:-left-10 before:rounded-full before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 after:w-0.5 after:h-3 after:bg-color2 after:absolute after:left-1 after:-top-10 hover:after:top-3.5 after:transition-all after:duration-200 after:ease-in">{navlink.name}
+                                        </NavLink>
                                     </List>
                                 ))
                             }
