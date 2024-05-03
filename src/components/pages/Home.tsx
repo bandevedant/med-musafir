@@ -1,7 +1,7 @@
 import BookingSteps from "../organs/BookingSteps"
 import HeroSection from "../organs/HeroSection"
 // import NewsLetter from "../organs/NewsLetter"
-// import Partners from "../organs/Partners"
+import Partners from "../organs/Partners"
 import Services from "../organs/Services"
 import Testimonials from "../organs/Testimonials"
 import TopDestination from "../organs/TopDestination"
@@ -16,7 +16,7 @@ const Home = () => {
             <TopDestination />
             <BookingSteps />
             <Testimonials />
-            {/* <Partners /> */}
+            <Partners />
             <MyImageCarousel/>
             {/* <NewsLetter /> */}
             {/* newsletter ki jagah gallery ka component dalna he */}
